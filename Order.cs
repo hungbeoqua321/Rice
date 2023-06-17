@@ -232,6 +232,7 @@ namespace Rice
 
         private void label24_Click_1(object sender, EventArgs e)
         {
+            MessageBox.Show("Xác nhận đơn hàng đặt thành công!");
             this.Hide();
             CL_Information cl = new CL_Information(this, id);
             cl.ShowDialog();
