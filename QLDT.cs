@@ -44,20 +44,20 @@ namespace Rice
 
             var results = collection.Aggregate<BsonDocument>(pipeline, aggregationOptions).ToList();
 
-            DataTable dt1 = new DataTable();
+            DataTable dt = new DataTable();
 
-            dt1.Columns.Add("Ngày");
-            dt1.Columns.Add("Tổng tiền");
+            dt.Columns.Add("Ngày");
+            dt.Columns.Add("Tổng tiền");
 
             foreach (var result in results)
             {
-                var row = dt1.NewRow();
+                var row = dt.NewRow();
                 row[0] = result["_id"];
                 row[1] = result["tongTien"];
-                dt1.Rows.Add(row);
+                dt.Rows.Add(row);
             }
 
-            dataGridView1.DataSource = dt1;
+            dataGridView1.DataSource = dt;
 
             //
             // Bảng theo Tháng
@@ -80,20 +80,57 @@ namespace Rice
 
             results = collection.Aggregate<BsonDocument>(pipeline, aggregationOptions).ToList();
 
-            dt1 = new DataTable();
+            dt = new DataTable();
 
-            dt1.Columns.Add("Tháng");
-            dt1.Columns.Add("Tổng tiền");
+            dt.Columns.Add("Tháng");
+            dt.Columns.Add("Tổng tiền");
 
             foreach (var result in results)
             {
-                var row = dt1.NewRow();
+                var row = dt.NewRow();
                 row[0] = result["_id"];
                 row[1] = result["tongTien"];
-                dt1.Rows.Add(row);
+                dt.Rows.Add(row);
             }
 
-            dataGridView2.DataSource = dt1;
+            dataGridView2.DataSource = dt;
+
+            //
+            // Theo năm bảng 3
+            //
+
+            pipeline = new BsonDocument[]
+            {
+                new BsonDocument("$group", new BsonDocument
+                {
+                    { "_id", new BsonDocument("$year", new BsonDocument("$dateFromString", new BsonDocument
+                        {
+                            { "dateString", "$ngaymua" },
+                            { "format", "%d/%m/%Y" }
+                        }))
+                    },
+                    { "tongTien", new BsonDocument("$sum", "$tongtien") }
+                })
+            };
+
+            aggregationOptions = new AggregateOptions { AllowDiskUse = true };
+
+            results = collection.Aggregate<BsonDocument>(pipeline, aggregationOptions).ToList();
+
+            dt = new DataTable();
+
+            dt.Columns.Add("Năm");
+            dt.Columns.Add("Tổng tiền");
+
+            foreach (var result in results)
+            {
+                var row = dt.NewRow();
+                row[0] = result["_id"];
+                row[1] = result["tongTien"];
+                dt.Rows.Add(row);
+            }
+
+            dataGridView3.DataSource = dt;
         }
 
         private void update_Click(object sender, EventArgs e)
