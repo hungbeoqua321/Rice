@@ -57,10 +57,10 @@
             this.Update_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Update_table.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update_table.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Update_table.Location = new System.Drawing.Point(657, 373);
+            this.Update_table.Location = new System.Drawing.Point(652, 373);
             this.Update_table.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Update_table.Name = "Update_table";
-            this.Update_table.Size = new System.Drawing.Size(111, 28);
+            this.Update_table.Size = new System.Drawing.Size(116, 31);
             this.Update_table.TabIndex = 14;
             this.Update_table.Text = "Cập nhật";
             this.Update_table.UseVisualStyleBackColor = false;
@@ -82,7 +82,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(229, 19);
+            this.label1.Location = new System.Drawing.Point(229, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(336, 40);
             this.label1.TabIndex = 10;

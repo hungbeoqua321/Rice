@@ -282,6 +282,7 @@ namespace Rice
             SL_ctt.Text = "0";
             SL_mc.Text = "0";
             SL_sc.Text = "0";
+            sum.Text = "0";
         }
 
         private void cancel_Click(object sender, EventArgs e)
