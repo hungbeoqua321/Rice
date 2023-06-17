@@ -132,7 +132,8 @@ namespace Rice
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            order.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
