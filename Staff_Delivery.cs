@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,20 +14,23 @@ namespace Rice
 {
     public partial class Staff_Delivery : Form
     {
-        public Staff_Delivery()
+        public Staff_Delivery(string ID)
         {
             InitializeComponent();
+            id = ID;
+        }
+        string id;
+
+        MongoDBConnector connector = new MongoDBConnector();
+        IMongoCollection<BsonDocument> collection;
+        private void Capnhat_Click(object sender, EventArgs e)
+        {
+            Staff_Delivery_Load(sender, e);
         }
 
-        private void doncg_Click(object sender, EventArgs e)
+        private void Staff_Delivery_Load(object sender, EventArgs e)
         {
-            table.Visible = true;
-            string[] row1 = new string[] { "01", "Cơm đậu sốt Tứ Xuyên", "Nguyễn Văn A, 175 Tây Sơn Đống Đa Hà Nội, 0984124786", "40000" };
-            table.Rows.Add(row1);
-            string[] row2 = new string[] { "02", "Cơm rang trứng", "Trần Thị B, 65 Khương Thượng Đống Đa Hà Nội, 0904174706", "40000" };
-            table.Rows.Add(row2);
-            string[] row3 = new string[] { "03", "Cơm cà ri, Cơm đùi gà chiên", "Lê Văn C, 75  Tôn Thất Tùng Đống Đa Hà Nội, 0984124786", "80000" };
-            table.Rows.Add(row3);
+
         }
     }
 }

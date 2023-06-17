@@ -90,7 +90,7 @@ namespace Rice
                         }
                         else
                         {
-                            this.Hide;
+                            this.Hide();
                             Staff_Delivery delivery = new Staff_Delivery(id);
                             delivery.ShowDialog();
                         }    

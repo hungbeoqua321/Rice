@@ -103,7 +103,7 @@ namespace Rice
             this.check.Name = "check";
             this.check.ReadOnly = true;
             this.check.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.check.Text = "OK";
+            this.check.Text = "";
             this.check.UseColumnTextForButtonValue = true;
             // 
             // Staff_Order

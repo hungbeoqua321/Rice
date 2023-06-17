@@ -71,3 +71,4 @@ C:\Users\phamq\OneDrive\Máy tính\C#\Rice\obj\Debug\Rice.application
 C:\Users\phamq\OneDrive\Máy tính\C#\Rice\obj\Debug\Rice.csproj.CopyComplete
 C:\Users\phamq\OneDrive\Máy tính\C#\Rice\obj\Debug\Rice.exe
 C:\Users\phamq\OneDrive\Máy tính\C#\Rice\obj\Debug\Rice.pdb
+C:\Users\phamq\OneDrive\Máy tính\C#\Rice\obj\Debug\Rice.Staff_Delivery.resources
