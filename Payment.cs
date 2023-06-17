@@ -30,7 +30,9 @@ namespace Rice
         private void ATM_Click(object sender, System.EventArgs e)
         {
             collection = connector.GetCollection<BsonDocument>("HoaDon");
-            var filter = Builders<BsonDocument>.Filter.Eq("idKH", id);
+            var filter = Builders<BsonDocument>.Filter.And(
+                Builders<BsonDocument>.Filter.Eq("idKH", id),
+                Builders<BsonDocument>.Filter.Eq("trangthai","Pending"));
             var condition = Builders<BsonDocument>.Update.Set("hinhthucthanhtoan", "Banking");
             collection.UpdateOne(filter, condition);
             tabControl1.SelectedTab = tabControl1.TabPages[1];
@@ -40,7 +42,9 @@ namespace Rice
         private void tienmat_Click(object sender, System.EventArgs e)
         {
             collection = connector.GetCollection<BsonDocument>("HoaDon");
-            var filter = Builders<BsonDocument>.Filter.Eq("idKH", id);
+            var filter = Builders<BsonDocument>.Filter.And(
+                Builders<BsonDocument>.Filter.Eq("idKH", id),
+                Builders<BsonDocument>.Filter.Eq("trangthai", "Pending"));
             var condition = Builders<BsonDocument>.Update.Set("hinhthucthanhtoan", "Cash");
             collection.UpdateOne(filter, condition);
             tabControl1.SelectedTab = tabControl1.TabPages[1];
@@ -52,7 +56,9 @@ namespace Rice
             if (DialogResult.Yes == MessageBox.Show("Bạn có chắc chắn muốn hủy đơn", "Quán cơm Shinco", MessageBoxButtons.YesNo))
             {
                 collection = connector.GetCollection<BsonDocument>("HoaDon");
-                var filter = Builders<BsonDocument>.Filter.Eq("idKH", id);
+                var filter = Builders<BsonDocument>.Filter.And(
+                    Builders<BsonDocument>.Filter.Eq("idKH", id),
+                    Builders<BsonDocument>.Filter.Eq("trangthai", "Pending"));
                 var hd = collection.Find(filter).FirstOrDefault();
                 var idHD = hd["_id"].AsBsonValue;
                 collection.DeleteOne(filter);

@@ -268,6 +268,16 @@ namespace Rice
                 {"trangthai" , "Pending" }
             };
             collection.InsertOne(bsons);
+            SL_cc.Text = string.Empty;
+            SL_ccr.Text = string.Empty;
+            SL_cdgc.Text = string.Empty;
+            SL_cdstx.Text = string.Empty;
+            SL_cgcst.Text = string.Empty;
+            SL_crt.Text = string.Empty;
+            SL_cst.Text = string.Empty;
+            SL_ctt.Text = string.Empty;
+            SL_mc.Text = string.Empty;
+            SL_sc.Text = string.Empty;
         }
 
         private void cancel_Click(object sender, EventArgs e)
@@ -279,7 +289,8 @@ namespace Rice
 
                 var filter = Builders<BsonDocument>.Filter.And(
                             Builders<BsonDocument>.Filter.Eq("idKH", id),
-                            Builders<BsonDocument>.Filter.Eq("_id", countDocument));
+                            Builders<BsonDocument>.Filter.Eq("_id", countDocument),
+                            Builders<BsonDocument>.Filter.Eq("trangthai","Pending"));
 
                 var hd = collection.Find(filter).FirstOrDefault();
                 var idHD = hd["_id"].AsBsonValue;
