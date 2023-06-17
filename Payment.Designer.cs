@@ -42,10 +42,10 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.Food = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -215,15 +215,25 @@
             this.tabPage3.Text = "Thanh toán Thành công";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // button3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(71, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(907, 91);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Cảm ơn bạn đã đặt hàng";
+            this.button3.Location = new System.Drawing.Point(708, 353);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 42);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Mua tiếp";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(247, 353);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 42);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Thoát";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -234,25 +244,15 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Đơn hàng sẽ đến bên bạn trong 20-30 phút nữa";
             // 
-            // button2
+            // label3
             // 
-            this.button2.Location = new System.Drawing.Point(247, 353);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(708, 353);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Mua tiếp";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(71, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(907, 91);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Cảm ơn bạn đã đặt hàng";
             // 
             // Payment
             // 
