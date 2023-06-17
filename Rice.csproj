@@ -210,6 +210,12 @@
     <Compile Include="Ed_Nhanvien.Designer.cs">
       <DependentUpon>Ed_Nhanvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff_Delivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Delivery.Designer.cs">
+      <DependentUpon>Staff_Delivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ed_Nhanvien.resx">
       <DependentUpon>Ed_Nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Delivery.resx">
+      <DependentUpon>Staff_Delivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>

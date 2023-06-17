@@ -70,6 +70,7 @@ namespace Rice
                 {
                     MessageBox.Show("Đăng nhập thành công", "Báo Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     string id = check.GetValue("id").AsString;
+                    string vaitro = check.GetValue("VaiTro").AsString;
                     //
                     // 3 trường hợp đăng nhập
                     //
@@ -81,9 +82,18 @@ namespace Rice
                     }
                     else if (id.StartsWith("N"))
                     {
-                        this.Hide();
-                        Staff_Order staff_Order = new Staff_Order(id);
-                        staff_Order.ShowDialog();
+                        if (vaitro == "Nhân viên nhận đơn")
+                        {
+                            this.Hide();
+                            Staff_Order staff_Order = new Staff_Order(id);
+                            staff_Order.ShowDialog();
+                        }
+                        else
+                        {
+                            this.Hide;
+                            Staff_Delivery delivery = new Staff_Delivery(id);
+                            delivery.ShowDialog();
+                        }    
                     }
                     else if (id.StartsWith("Q"))
                     {
