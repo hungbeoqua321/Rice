@@ -40,7 +40,9 @@ namespace Rice
         private void Danhsach_NV_Load(object sender, EventArgs e)
         {
             collection = connector.GetCollection<BsonDocument>("NguoiDung");
-            var users = collection.Find(Builders<BsonDocument>.Filter.Eq("VaiTro", "Nhân viên")).ToList();
+            var users = collection.Find(Builders<BsonDocument>.Filter.Or(
+                                        Builders<BsonDocument>.Filter.Eq("VaiTro", "Nhân viên giao hàng"),
+                                        Builders<BsonDocument>.Filter.Eq("VaiTro", "Nhân viên nhận đơn"))).ToList();
             DataTable tb = new DataTable();
 
             // collumns
