@@ -85,7 +85,7 @@ namespace Rice
                     // lấy số bản ghi để thêm khách mới
                     //
                     var filter_user = Builders<BsonDocument>.Filter.Eq("VaiTro", "Khách Hàng");
-                    string id = "K" + users.Find(filter).CountDocuments().ToString();
+                    string id = "K" + Convert.ToString(users.Find(filter).CountDocuments() + 1);
 
                     //
                     // Ghi vào bảng người dùng
