@@ -109,10 +109,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(0, -26);
+            this.tabControl1.Location = new System.Drawing.Point(0, -24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1056, 604);
+            this.tabControl1.Size = new System.Drawing.Size(1056, 602);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage2
@@ -149,7 +149,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1048, 541);
+            this.tabPage1.Size = new System.Drawing.Size(1048, 573);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Hóa Đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             this.CF.Name = "CF";
             this.CF.Size = new System.Drawing.Size(146, 32);
             this.CF.TabIndex = 12;
-            this.CF.Text = "Thanh toán";
+            this.CF.Text = "Xác nhận";
             this.CF.UseVisualStyleBackColor = true;
             this.CF.Click += new System.EventHandler(this.CF_Click);
             // 
@@ -210,7 +210,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1048, 575);
+            this.tabPage3.Size = new System.Drawing.Size(1048, 537);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Thanh toán Thành công";
             this.tabPage3.UseVisualStyleBackColor = true;

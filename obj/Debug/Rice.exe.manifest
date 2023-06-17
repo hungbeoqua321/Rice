@@ -174,14 +174,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Rice.exe" size="9701784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Rice.exe" size="9702296">
       <assemblyIdentity name="Rice" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Udp7WfCctfnZy/TFbG5YqLCFpie5FW+3govxByBcM2M=</dsig:DigestValue>
+        <dsig:DigestValue>hN4WkpRkILQX5QYrb29ZaAvLQUhAPM5+TPIWFnx2BmQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

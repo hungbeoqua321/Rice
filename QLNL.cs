@@ -78,6 +78,7 @@ namespace Rice
                     TenNguyenLieu.Text = dataGridViewRow.Cells["Tên nguyên liệu"].Value.ToString();
                     DonGia.Text = dataGridViewRow.Cells["Đơn giá"].Value.ToString();
                     SoLuong.Text = dataGridViewRow.Cells["Đơn vị"].Value.ToString();
+                    MessageBox.Show("Cập nhật thành công");
                 }
                 if (e.ColumnIndex == dataGridView1.Columns["del"].Index) // xóa
                 {

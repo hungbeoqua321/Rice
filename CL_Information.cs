@@ -72,6 +72,7 @@ namespace Rice
             Addr.Visible = false; dc.Visible = true;
             Edit_button.Visible = true;
             this.reload(sender, e);
+            MessageBox.Show("Chỉnh sửa thông tin cá nhân thành công");
         }
 
         private void HoTen_TextChanged(object sender, EventArgs e)

@@ -232,7 +232,6 @@ namespace Rice
                 Builders<BsonDocument>.Filter.Eq("trangthai","Pending"));
             var condition = Builders<BsonDocument>.Update.Set("tongtien", SUM());
             collection.UpdateOne(filter, condition);
-            MessageBox.Show("Xác nhận đơn hàng đặt thành công!");
             this.Hide();
             Payment payment = new Payment(this, id);
             payment.ShowDialog();

@@ -27,7 +27,7 @@ namespace Rice
         private void Staff_Delivery_Load(object sender, EventArgs e)
         {
             collection = connector.GetCollection<BsonDocument>("HoaDon");
-            var HDs = collection.Find(Builders<BsonDocument>.Filter.Eq("trangthai", "Complete - Paied")).ToList();
+            var HDs = collection.Find(Builders<BsonDocument>.Filter.Eq("trangthai", "Complete - Pending")).ToList();
 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("id");
@@ -78,14 +78,14 @@ namespace Rice
                 Builders<BsonDocument>.Filter.Eq("_id",table.Rows[e.RowIndex].Cells["id"].Value.ToString()));
                 if (table.Rows[e.RowIndex].Cells[e.ColumnIndex] == table.Rows[e.RowIndex].Cells["Done"])
                 {
-                    MessageBox.Show("Hệ thống thông báo đơn hoàn thành");
+                    MessageBox.Show("Giao hàng thành công");
                     var condition = Builders<BsonDocument>.Update.Set("trangthai", "Complete");
                     collection.UpdateOne(filter, condition);
                     this.Staff_Delivery_Load(sender, e);
                 }
                 if (table.Rows[e.RowIndex].Cells[e.ColumnIndex] == table.Rows[e.RowIndex].Cells["Failure"])
                 {
-                    MessageBox.Show("Hệ thống thông báo đơn thất bại");
+                    MessageBox.Show("Giao hàng thất bại");
                     this.Staff_Delivery_Load(sender, e);
                 }
             }
