@@ -88,7 +88,7 @@ namespace Rice
                 var ChiTietHD = collection.Find(Builders<BsonDocument>.Filter.Eq("idHD", idHD)).ToList();
                 foreach (var item in ChiTietHD)
                 {
-                    var tenMon = item.GetValue("_id");
+                    var tenMon = item.GetValue("id");
                     var soLuong = item.GetValue("soluong");
 
                     ListViewItem listItem = new ListViewItem(tenMon.ToString());
@@ -134,6 +134,9 @@ namespace Rice
                 Builders<BsonDocument>.Filter.Eq("trangthai","Pending"));
             var condition = Builders<BsonDocument>.Update.Set("trangthai","Complete");
             collection.UpdateOne(filter, condition);
+            collection = connector.GetCollection<BsonDocument>("ChiTietHD");
+            filter = Builders<BsonDocument>.Filter.Eq("soluong",0);
+            collection.DeleteMany(filter);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -145,6 +148,7 @@ namespace Rice
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+            order.Order_Load(sender, e);
             order.Show();
         }
     }

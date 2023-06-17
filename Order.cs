@@ -35,7 +35,9 @@ namespace Rice
         private void ChiTietHD_Update_UP(string food, int count)
         {
             collection = connector.GetCollection<BsonDocument>("ChiTietHD");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", food);
+            var filter = Builders<BsonDocument>.Filter.And(
+                Builders<BsonDocument>.Filter.Eq("id", food),
+                Builders<BsonDocument>.Filter.Eq("idHD",countDocument + 1));
             var check = collection.Find(filter).FirstOrDefault();
             if (check != null)
             {
@@ -46,7 +48,7 @@ namespace Rice
             {
                 BsonDocument bsons = new BsonDocument
                 {
-                    {"_id",food },
+                    {"id",food },
                     {"idHD",countDocument + 1},
                     {"soluong",count}
                 };
@@ -57,7 +59,9 @@ namespace Rice
         private void ChiTietHD_Update_DOWN(string food, int count)
         {
             collection = connector.GetCollection<BsonDocument>("ChiTietHD");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", food);
+            var filter = Builders<BsonDocument>.Filter.And(
+                Builders<BsonDocument>.Filter.Eq("id", food),
+                Builders<BsonDocument>.Filter.Eq("idHD", countDocument + 1));
             if (count != 0)
             {
                 var condition = Builders<BsonDocument>.Update.Set("soluong", count);
@@ -268,16 +272,16 @@ namespace Rice
                 {"trangthai" , "Pending" }
             };
             collection.InsertOne(bsons);
-            SL_cc.Text = string.Empty;
-            SL_ccr.Text = string.Empty;
-            SL_cdgc.Text = string.Empty;
-            SL_cdstx.Text = string.Empty;
-            SL_cgcst.Text = string.Empty;
-            SL_crt.Text = string.Empty;
-            SL_cst.Text = string.Empty;
-            SL_ctt.Text = string.Empty;
-            SL_mc.Text = string.Empty;
-            SL_sc.Text = string.Empty;
+            SL_cc.Text = "0";
+            SL_ccr.Text = "0";
+            SL_cdgc.Text = "0";
+            SL_cdstx.Text = "0";
+            SL_cgcst.Text = "0";
+            SL_crt.Text = "0";
+            SL_cst.Text = "0";
+            SL_ctt.Text = "0";
+            SL_mc.Text = "0";
+            SL_sc.Text = "0";
         }
 
         private void cancel_Click(object sender, EventArgs e)
