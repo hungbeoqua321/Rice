@@ -73,6 +73,7 @@
             this.table.RowHeadersWidth = 51;
             this.table.Size = new System.Drawing.Size(902, 306);
             this.table.TabIndex = 4;
+            this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellContentClick);
             // 
             // Capnhat
             // 
@@ -84,7 +85,7 @@
             this.Capnhat.TabIndex = 5;
             this.Capnhat.Text = "Cập nhật";
             this.Capnhat.UseVisualStyleBackColor = true;
-            this.Capnhat.Click += new System.EventHandler(this.Capnhat_Click);
+            this.Capnhat.Click += new System.EventHandler(this.Staff_Delivery_Load);
             // 
             // Done
             // 
@@ -115,6 +116,7 @@
             this.Name = "Staff_Delivery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giao hàng";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Staff_Delivery_FormClosed);
             this.Load += new System.EventHandler(this.Staff_Delivery_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
