@@ -226,7 +226,10 @@ namespace Rice
         private void Pay_Click(object sender, EventArgs e)
         {
             collection = connector.GetCollection<BsonDocument>("HoaDon");
-            var filter = Builders<BsonDocument>.Filter.Eq("idKH", id);
+            var filter = Builders<BsonDocument>.Filter.And(
+                Builders<BsonDocument>.Filter.Eq("idKH", id),
+                Builders<BsonDocument>.Filter.Eq("_id",countDocument + 1),
+                Builders<BsonDocument>.Filter.Eq("trangthai","Pending"));
             var condition = Builders<BsonDocument>.Update.Set("tongtien", SUM());
             collection.UpdateOne(filter, condition);
             MessageBox.Show("Xác nhận đơn hàng đặt thành công!");
