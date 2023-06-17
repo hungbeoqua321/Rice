@@ -1027,9 +1027,9 @@
             this.label24.Location = new System.Drawing.Point(77, 14);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(195, 27);
+            this.label24.Size = new System.Drawing.Size(95, 27);
             this.label24.TabIndex = 99;
-            this.label24.Text = "Thông tin cá nhân";
+            this.label24.Text = "Cá nhân";
             this.label24.Click += new System.EventHandler(this.label24_Click_1);
             // 
             // Rate
