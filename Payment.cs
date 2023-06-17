@@ -132,7 +132,7 @@ namespace Rice
             var filter = Builders<BsonDocument>.Filter.And(
                 Builders<BsonDocument>.Filter.Eq("idKH",id),
                 Builders<BsonDocument>.Filter.Eq("trangthai","Pending"));
-            var condition = Builders<BsonDocument>.Update.Set("trangthai","Complete");
+            var condition = Builders<BsonDocument>.Update.Set("trangthai","Complete - Paied");
             collection.UpdateOne(filter, condition);
             collection = connector.GetCollection<BsonDocument>("ChiTietHD");
             filter = Builders<BsonDocument>.Filter.Eq("soluong",0);

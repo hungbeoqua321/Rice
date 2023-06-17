@@ -30,7 +30,38 @@ namespace Rice
 
         private void Staff_Delivery_Load(object sender, EventArgs e)
         {
+            collection = connector.GetCollection<BsonDocument>("HoaDon");
+            var HDs = collection.Find(Builders<BsonDocument>.Filter.Eq("trangthai", "Complete - Pending")).ToList();
 
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("id");
+            dataTable.Columns.Add("Tên khách hàng");
+            dataTable.Columns.Add("Địa chỉ");
+            dataTable.Columns.Add("Tổng tiền");
+            dataTable.Columns.Add("Thu tiền");
+
+            foreach (var hd in HDs)
+            {
+                var row = dataTable.NewRow();
+                var idkh = hd["idKH"];
+                collection = connector.GetCollection<BsonDocument>("NguoiDung");
+                var ttkh = collection.Find(Builders<BsonDocument>.Filter.Eq("id", idkh)).FirstOrDefault();
+                row["id"] = hd["_id"];
+                row[1] = ttkh.GetValue("ten").AsString;
+                row[2] = ttkh.GetValue("addr").AsString;
+                row[3] = hd["tongtien"].AsInt32;
+                if (hd["hinhthucthanhtoan"].AsString == "Cash")
+                    row[4] = "Có";
+                else
+                    row[4] = "Không";
+                dataTable.Rows.Add(row);
+            }
+
+            table.DataSource = dataTable;
+            table.Columns["Done"].FillWeight = 40;
+            table.Columns["Done"].DisplayIndex = table.ColumnCount - 1;
+            table.Columns["Failure"].FillWeight = 40;
+            table.Columns["Failure"].DisplayIndex = table.ColumnCount - 1;
         }
     }
 }

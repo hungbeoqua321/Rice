@@ -30,7 +30,7 @@ namespace Rice
         private void reload(object sender, EventArgs e)
         {
             collection = connector.GetCollection<BsonDocument>("HoaDon");
-            var HDs = collection.Find(Builders<BsonDocument>.Filter.Eq("trangthai", "Complete")).ToList();
+            var HDs = collection.Find(Builders<BsonDocument>.Filter.Eq("trangthai", "Complete - Paied")).ToList();
 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("id");
@@ -74,21 +74,9 @@ namespace Rice
                 var filter = Builders<BsonDocument>.Filter.And(
                              Builders<BsonDocument>.Filter.Eq("_id", dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString()),
                              Builders<BsonDocument>.Filter.Eq("trangthai","Complete"));
-                var condition = Builders<BsonDocument>.Update.Set("idNV", id);
-                DataGridViewButtonCell buttonCell = dataGridView1.Rows[e.RowIndex].Cells["check"] as DataGridViewButtonCell;
-                if (buttonCell.ToString() != "Hủy")// Nhận đơn
-                {
-                    buttonCell.Value = "Hủy";
-                    collection.UpdateOne(filter, condition);
-                }
-                    
-                else // Không nhận đơn
-                {
-                    buttonCell.Value = "Nhận";
-                    condition = Builders<BsonDocument>.Update.Set("idNV","None");
-                    collection.UpdateOne(filter, condition);
-
-                }
+                var condition = Builders<BsonDocument>.Update.Set("trangthai", "Complete - Pending");
+                collection.UpdateOne(filter, condition);
+                this.reload(sender,e);
             }
         }
     }

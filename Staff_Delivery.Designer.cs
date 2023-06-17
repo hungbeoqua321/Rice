@@ -31,13 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.table = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Capnhat = new System.Windows.Forms.Button();
+            this.Done = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Failure = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
@@ -69,57 +65,14 @@
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.Done,
+            this.Failure});
             this.table.Location = new System.Drawing.Point(14, 254);
             this.table.Margin = new System.Windows.Forms.Padding(4);
             this.table.Name = "table";
             this.table.RowHeadersWidth = 51;
             this.table.Size = new System.Drawing.Size(902, 306);
             this.table.TabIndex = 4;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã đơn hàng";
-            this.Column1.MaxInputLength = 1000;
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Món ăn";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Thông tin đặt hàng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Thanh toán";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Giao thành công";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Giao thất bại";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
             // 
             // Capnhat
             // 
@@ -132,6 +85,21 @@
             this.Capnhat.Text = "Cập nhật";
             this.Capnhat.UseVisualStyleBackColor = true;
             this.Capnhat.Click += new System.EventHandler(this.Capnhat_Click);
+            // 
+            // Done
+            // 
+            this.Done.HeaderText = "Giao thành công";
+            this.Done.MinimumWidth = 6;
+            this.Done.Name = "Done";
+            this.Done.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Done.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Failure
+            // 
+            this.Failure.HeaderText = "Giao thất bại";
+            this.Failure.MinimumWidth = 6;
+            this.Failure.Name = "Failure";
+            this.Failure.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Staff_Delivery
             // 
@@ -161,11 +129,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.Button Capnhat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewButtonColumn Done;
+        private System.Windows.Forms.DataGridViewButtonColumn Failure;
     }
 }
