@@ -225,6 +225,7 @@ namespace Rice
             var filter = Builders<BsonDocument>.Filter.Eq("idKH", id);
             var condition = Builders<BsonDocument>.Update.Set("tongtien", SUM());
             collection.UpdateOne(filter, condition);
+            MessageBox.Show("Xác nhận đơn hàng đặt thành công!");
             this.Hide();
             Payment payment = new Payment(this, id);
             payment.ShowDialog();
@@ -232,7 +233,6 @@ namespace Rice
 
         private void label24_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Xác nhận đơn hàng đặt thành công!");
             this.Hide();
             CL_Information cl = new CL_Information(this, id);
             cl.ShowDialog();
