@@ -77,7 +77,7 @@ namespace Rice
                 //
                 // kiểm tra trùng tk
                 //
-                var filter = Builders<BsonDocument>.Filter.Eq("TK", tk);
+                var filter = Builders<BsonDocument>.Filter.Eq("tk", tk);
                 var ck = users.Find(filter).FirstOrDefault();
                 if (ck == null)
                 {
@@ -85,7 +85,7 @@ namespace Rice
                     // lấy số bản ghi để thêm khách mới
                     //
                     var filter_user = Builders<BsonDocument>.Filter.Eq("VaiTro", "Khách Hàng");
-                    string id = "K" + Convert.ToString(users.Find(filter).CountDocuments() + 1);
+                    string id = "K" + Convert.ToString(users.Find(filter_user).CountDocuments() + 1);
 
                     //
                     // Ghi vào bảng người dùng
